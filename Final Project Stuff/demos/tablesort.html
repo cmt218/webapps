@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Table Sort Demo</title>
+        <script>
+            function sort(evt, col) {
+                var tabl = 
+					document.getElementById("tab").getElementsByTagName("tbody")[0];
+                var rows = tabl.rows;
+                var rowarray = new Array(rows.length);
+                var htmlarray = new Array(rows.length);
+				
+                for (var i = 0; i < rows.length; ++i) {
+                    rowarray[i] = rows[i];
+                }
+				
+                rowarray.sort(
+					function (a, b) {
+						if (a.childNodes[col].firstChild.nodeValue <
+							b.childNodes[col].firstChild.nodeValue)
+							return -1
+						else
+							return 1;
+					}
+                )
+							 	
+                for (var j = 0; j < rows.length; ++j) {
+                    htmlarray[j] = rowarray[j].innerHTML;
+                }
+
+                for (var k = 0; k < rows.length; ++k) {
+                    rows[k].innerHTML = htmlarray[k];
+                }
+
+            };
+        </script>
+    </head>
+    <body>
+        <h2>Click on a column header to sort that column...</h2>
+        <table id="tab" border="1" width="1" cellspacing="1" cellpadding="1">
+            <thead>
+                <tr>
+                    <th onclick="sort(event, 1)">Column 1</th>
+                    <th onclick="sort(event, 3)">Column 2</th>
+                    <th onclick="sort(event, 5)">Column 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>alpha</td>
+                    <td>4</td>
+                    <td>d</td>
+                </tr>
+                <tr>
+                    <td>beta</td>
+                    <td>3</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>charlie</td>
+                    <td>2</td>
+                    <td>c</td>
+                </tr>
+                <tr>
+                    <td>delta</td>
+                    <td>1</td>
+                    <td>b</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>

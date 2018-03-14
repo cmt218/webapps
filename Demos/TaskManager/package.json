@@ -1,0 +1,17 @@
+{
+  "name": "taskManager",
+  "version": "1.0.0",
+  "description": "Web task manager using node, express, jqueryUI",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cole Tomlinson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}

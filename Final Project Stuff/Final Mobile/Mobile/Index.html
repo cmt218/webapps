@@ -1,0 +1,53 @@
+<!-- Cole Tomlinson Final Web App -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="scripts/script.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+
+
+  <div data-role="main" class="ui-content">
+    <img src = "styles/img/launch.png" class = "launch">
+
+    <div id = "score">
+        <h1>Score:  <span id="putScore"></span></h1>
+    </div>
+
+    <div id = "timer">
+        <h1><span id="putTime"></span></h1>
+    </div>
+
+
+    <!--<a href="#pagetwo">Go to Dialog Page</a>-->
+  </div>
+
+</div> 
+
+<div data-role="page" data-dialog="true" id="pagetwo">
+  <div data-role="header">
+    <h1>I'm A Dialog Box!</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>The dialog box is different from a normal page, it is displayed on top of the current page and it will not span the entire width of the page. The dialog has also an icon of "X" in the header to close the box.</p>
+    <a href="#pageone">Go to Page One</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text In Dialog</h1>
+  </div>
+
+</div> 
+
+
+</body>
+</html>

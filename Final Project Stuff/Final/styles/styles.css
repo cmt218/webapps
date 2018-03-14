@@ -1,0 +1,11 @@
+#container{
+	width: 600px;
+	height: 800px;
+	background-image: url("img/background.png");
+}
+
+.launch{
+	position: absolute;
+	top: 650;
+	left: 450;
+}

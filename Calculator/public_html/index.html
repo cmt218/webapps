@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Calculator</title>
+            <script type="text/javascript" src="script.js"></script> 
+            <link rel="stylesheet" href="style.css" />
+        </head>
+        <body>
+        <form class="calcForm">
+            <input type="text" class="calcDisplay" id="display" value="0" readonly/>
+            <div class="row">
+                <input type="button" class="num" value="7" onclick="numPress('7')" />
+                <input type="button" class="num" value="8" onclick="numPress('8')" />
+                <input type="button" class="num" value="9" onclick="numPress('9')" />
+                <input type="button" class="op" value="+" onclick="add()" />
+            </div>
+            <div class="row">
+                <input type="button" class="num" value="4" onclick="numPress('4')" />
+                <input type="button" class="num" value="5" onclick="numPress('5')" />
+                <input type="button" class="num" value="6" onclick="numPress('6')" />
+                <input type="button" class="op" value="-" onclick="subtract()" />
+            </div>
+            <div class="row">
+                <input type="button" class="num" value="1" onclick="numPress('1')" />
+                <input type="button" class="num" value="2" onclick="numPress('2')" />
+                <input type="button" class="num" value="3" onclick="numPress('3')" />
+                <input type="button" class="op" value="x" onclick="multiply()" />
+            </div>
+            <div class="row">
+                <input type="button" class="num" value="0" onclick="numPress('0')" />
+                <input type="button" class="dec" value="." onclick="appendDec()" />
+                <input type="button" class="dec" value="+/-" onclick="posNeg()" />
+                <input type="button" class="clr" value="C" onclick="calClear()" />
+                <input type="button" class="psh" value="push" onclick="push()" />
+                <input type="button" class="op" value="/" onclick="divide()" />
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<!--
+Bouncing Ball Page - Click the button to start a new ball going.
+Purpose: Demonstrates object oriented JavaScript and CSS absolute positioning.
+Author: J. Femister
+-->
+
+<html>
+    <head>
+        <title>Bouncing Balls</title>
+    </head>
+
+    <body scroll="no" onload="init()">
+
+        <button onclick="addBall()">New Ball</button>
+
+        <script type="text/javascript">
+            <!--
+
+            var body; // window.body
+
+            function init() {
+                body = document.getElementsByTagName("body")[0];
+                // Workaround for IE
+                window.innerHeight = window.innerHeight || window.screen.availHeight;
+            }
+
+            function moveBall() {
+                // Recalculate direction of the ball.
+                if (this.x + this.image.width  >= window.screen.availWidth)  this.dirX = -this.dirX;
+                if (this.y + this.image.height >= window.innerHeight) this.dirY = -this.dirY;
+                if (this.x <= 0) this.dirX = -this.dirX;
+                if (this.y <= 0) this.dirY = -this.dirY;
+
+                // Update the coordinates.
+                this.x += this.dirX;
+                this.y += this.dirY;
+
+                // Reposition the ball Image.
+                this.image.style.left = this.x + "px";
+                this.image.style.top = this.y + "px";
+            }
+
+            // Move each ball in the list one unit in it's current direction
+            function moveAllBalls() {
+                for (var i = 0; i < Ball.next; ++i)
+                    Ball.list[i].move();
+            }
+
+            var t;
+            // Update the position of the images every millisecond
+            function timer()
+            {
+                Ball.moveAll();
+                t = setTimeout("timer()",1);
+            }
+
+            function launchBall() {
+                // Create an IMG element using the DOM methods
+                var imageElement = document.createElement("img"); // <img src="".......>
+                imageElement.setAttribute("id", "b" + this.n);
+                imageElement.setAttribute("src", "marble3.gif");
+                imageElement.style.position = "absolute";
+
+                // Add the IMG element to the BODY element
+                body.appendChild(imageElement)
+
+                // Save reference to IMG element as instance property
+                this.image = document.getElementById("b" + this.n);
+
+                // Start the animation timer if this is the first ball.
+                if (this.n <= 0)
+                    timer();
+            }
+
+            // Constructor for Ball objects
+            function Ball(x, y, speed, dirx, diry) {
+                this.n = Ball.next++;
+                Ball.list[this.n] = this;
+                this.x = x;
+                this.y = y;
+                this.speed = speed;
+                this.dirX = dirx;
+                this.dirY = diry;
+                this.image = null;
+            }
+
+            Ball.prototype.launch = launchBall; // Instance method
+            Ball.prototype.move = moveBall; // Instance method
+            Ball.moveAll = moveAllBalls; // Class method
+            Ball.next = 0; // Class property
+            Ball.list = new Array(); // Class property
+
+            // Create a new ball object and set it in motion.
+            function addBall() {
+                x = new Ball(1, 1, 0, 2, 2);
+                x.launch();
+            }
+
+            //-->
+        </script>
+
+    </body>
+
+</html>

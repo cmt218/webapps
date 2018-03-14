@@ -1,0 +1,16 @@
+{
+  "name": "simpleajaxexample",
+  "version": "1.0.0",
+  "description": "A simple example of using ajax to fill a dropdown list.",
+  "main": "simpleajaxexample.js",
+  "scripts": {
+    "start": "node simpleajaxexample.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James A. Femister",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}

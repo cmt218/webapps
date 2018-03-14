@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Event Demo</title>
+   </head>
+   <body onload="setup()">
+      <div id="container" style="width:80%">
+         <div id="board" style="float:left;width:75%;height:650px">
+            <form>
+               <input type="text" size="30"></input>
+               <button id="btn">Click Me!</button>
+            </form>
+            <br/>
+            <div id="box" style="width:100px;height:100px;background-color: cornflowerblue">
+               
+            </div>
+         </div>
+         <div>Coords: x: <span id="x"></span>, y: <span id="y"></span></div>
+         <div>Size: x: <span id="sx"></span>, y: <span id="sy"></span></div>
+         <div id="eventlist" style="background-color: yellow;width:25%;height:600px;overflow: scroll">
+         </div>
+      </div>
+
+      <script>
+
+      function setup() {
+         var button = document.getElementById("btn");
+         var list = document.getElementById("eventlist");
+         var mouseEvents = ["mousedown", "mouseup", "mousemove", "mouseover", "mouseout"]
+
+         var events =
+                 ["keydown", "keyup", "keypress",
+                    "click", "dblclick", "textinput",
+                    "focus", "blur", "change", "submit",
+                    "load", "unload"
+                 ];
+         function modifiers(evt) {
+            return "(" + (evt.altKey ? "A" : "") + (evt.ctrlKey ? "C" : "") + (evt.metaKey ? "M" : "") + (evt.shiftKey ? "S" : "") + ")";
+         }
+
+         var xput = document.getElementById("x");
+         var yput = document.getElementById("y");
+         var sxput = document.getElementById("sx");
+         var syput = document.getElementById("sy");
+         
+         function mouseHandler(evt) {
+            xput.innerHTML = evt.clientX;
+            yput.innerHTML = evt.clientY;
+            switch (evt.type) {
+               case "mousemove":
+                  break;
+               default:
+                  list.appendChild(document.createTextNode(evt.type + " event on " + evt.target.tagName + " " + evt.target.id));
+                  list.appendChild(document.createElement("br"));
+                  break;
+            }
+         }
+
+         function handler(evt) {
+            list.appendChild(document.createTextNode(evt.type + " event on " + evt.target.tagName));
+            switch (evt.type) {
+               case "submit":
+                  evt.preventDefault();
+                  break;
+               case "keydown":
+               case "keyup":
+               case "keypress":
+                  list.appendChild(document.createTextNode(" key=" + evt.keyCode + modifiers(evt)));
+                  break;
+            }
+
+            list.appendChild(document.createElement("br"));
+            return false;
+         }
+
+         // Register Event Handlers
+         for (var i = 0; i < events.length; ++i) {
+            window.addEventListener(events[i], handler, false);
+         }
+         for (var i = 0; i < mouseEvents.length; ++i) {
+            window.addEventListener(mouseEvents[i], mouseHandler, false);
+         }
+         window.onresize = function (evt) { 
+            sxput.innerHTML = window.innerWidth
+            syput.innerHTML = window.innerHeight
+         }
+      }
+      </script>
+
+   </body>
+</html>

@@ -1,0 +1,11 @@
+#pageone{
+	width: 600px;
+	height: 800px;
+	background-image: url("img/background.png");
+}
+
+.launch{
+	position: absolute;
+	top: 650px;
+	left: 450px;
+}

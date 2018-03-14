@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title>Word Search</title>
+	</head>
+
+	<body>
+		<div id="container">
+
+			<div class="row1">
+				<div class="welcome">
+					<h1>Hey there, <span id="putname"></span>
+				</div>
+				<div class="inputName">
+					<form>
+						User Name: 
+						<input type="text" name="registername" id="registername"/>
+						<input type="button" value="Register Me" id="registerbutton"/>
+					</form>
+				</div>
+			</div>
+
+			<div class="row2">
+				<div id="searchcontainer">
+					<table id="puzzle"></table>
+				</div>
+				<div id="right">
+					<fieldset>
+                        <legend>Commands</legend>
+                        <input type="button" id="submit" value="Submit Word"/>
+                    </fieldset>
+                    <div id="users">
+                    	<table>
+                    		<thead>
+                    			<tr><td id="names">Name</td><td>Score</td><td>Winner</td></tr>
+                    		</thead>
+                    		<tbody></tbody>
+                    	</table>
+                    </div>
+				</div>
+			</div>
+
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        	<script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+        	<script src="script.js"></script>
+		</div>
+	</body>
+</html>

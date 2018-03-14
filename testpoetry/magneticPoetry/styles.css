@@ -1,0 +1,55 @@
+/*Cole Tomlinson*/
+
+body {
+	background-color: black;
+}
+
+.textbox {
+	background-color: white;
+	width: 260px;
+}
+
+.word{
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: white;
+	position: absolute;
+}
+
+.stay{
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: white;
+	position: absolute;
+}
+
+#onload1 {
+	position: absolute;
+	top: 0;
+	left: 450px;
+}
+
+#onload2 {
+	position: absolute;
+	top: 0;
+	left: 525px;
+}
+
+#onload3 {
+	position: absolute;
+	top: 0;
+	left: 600px;
+}
+
+#onload4 {
+	position: absolute;
+	top: 0;
+	left: 700px;
+}
+.trash{
+	float: right;
+}
+
+.trash img{
+	width: 100px;
+}

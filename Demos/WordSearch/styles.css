@@ -1,0 +1,16 @@
+#searchcontainer{
+	max-height: 500px;
+	max-width: 500px;
+	overflow: scroll;
+	float: left;
+}
+
+#right{
+	float: left;
+	max-height: 800px;
+	overflow: scroll;
+}
+
+#container{
+	overflow: hidden;
+}

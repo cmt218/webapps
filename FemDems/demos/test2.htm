@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+
+<div id="container" style="background-color:yellow">
+</div>
+
+<div id="c2" style="background-color:beige">
+<input id="btn" type="button" value="click me"></input>
+<input id="btn2" type="button" value="click me also"></input>
+<input id="btn3" type="button" value="click me also"></input>
+</div>
+
+<script>
+  document.getElementById("container").innerHTML = "<b>This is a test</b>";
+  document.getElementById("c2").onclick = function(evt) {
+	if (evt.target.id == "btn")
+		document.getElementById("container").innerHTML = "Goodbye";
+	else
+		document.getElementById("container").innerHTML = "Girl";
+	
+  };
+</script>
+</body>
+</html>

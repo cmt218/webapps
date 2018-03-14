@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 20, 2017, 3:22:25 PM
+    Author     : cole631
+*/
+.calcDisplay {
+    width: 278px;
+    text-align: right;
+}
+.num {
+    color: red;
+    width: 80px;
+    height: 25px;
+}
+
+.op {
+    width: 30px;
+    height: 25px;
+}
+
+.dec {
+    width: 38px;
+    height: 25px;
+}
+
+.clr {
+    width: 38px;
+    height: 25px;
+}
+
+.psh {
+    width: 38px;
+    height: 25px;
+}

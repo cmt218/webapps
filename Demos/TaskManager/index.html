@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--Cole Tomlinson-->
+
+<html>
+    <head><title>Cole Tomlinson Task Manager</title></head>
+    <body>
+        
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+
+<div style="width: 66; float: left">
+        <table border="2">
+            <thead>
+                <tr>
+                  <td style="width:20px"></td>
+                  <td style="width:275px">Task</td>
+                  <td style="width:275px">Type</td>
+                  <td style="width:275px">Due Date</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+</div>
+
+<div style="width: 33%; float: right">
+        <form >
+            Description: <input type="text" id="task"/>
+            <br>
+            Date: <input type="text" id="date"/>
+            <br>
+            Type: 
+            <select name="type" id="type" onchange="waiting(this);">
+                <option value="Next Action">Next Action</option>
+                <option value="Waiting For">Waiting For</option>
+                <option value="Talk To">Talk To</option>
+                <option value="Future">Future</option>
+                <option value="Someday/Maybe">Someday/Maybe</option>
+            </select>
+            <br>
+            <div id="secret"></div>
+            <br>
+            <button type="button" onclick="addTask();">Add</button>
+            <button type="button" onclick="deleteTasks();">Delete</button>
+
+        </form>
+</div>
+
+<script src="script.js"></script> 
+        
+    </body>
+</html>

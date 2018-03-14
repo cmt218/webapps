@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        <script>
+            function hello() {
+                var title = document.getElementById("intro");
+                title.innerHTML += "<span style='color:red'> Hello, World!</span>";   // DOM
+            }
+        </script>
+    </head>
+    <body onclick="hello()">
+        <h1 id="intro">Goodbye</h1>
+    </body>
+</html>

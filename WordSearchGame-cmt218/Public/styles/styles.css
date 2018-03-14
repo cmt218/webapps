@@ -1,0 +1,31 @@
+
+#hand {
+    max-width: 800px;
+    max-height: 800px;
+    overflow: scroll;
+    background-color: #ffffff;
+}
+
+#grid td {
+    padding: 4px;
+}
+
+
+#rhs {
+    height: 200px;
+}
+
+#userlist {
+    background-color:grey;
+    max-height: 600px;
+    overflow: scroll;
+}
+
+#userlist td {
+    width : 55px;
+}
+
+#container {
+    margin: auto;
+}
+

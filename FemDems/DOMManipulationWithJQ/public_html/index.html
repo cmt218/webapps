@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>DOM Manipulation with jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="cse264favicon.ico">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <h1>This is a test</h1>
+        <script>
+            function doStuff() {
+                var root = $("body");
+                root.children().each(function () { alert($(this).prop("tagName")); });
+                $("script[src]").each( function() { alert($(this).attr("src")); } );
+                $($("meta[name]")[0].attributes).each(
+                    function() {
+                        nodeInfo = this.nodeName + "(" + this.nodeValue + ") ";
+                        alert(nodeInfo);
+                    }
+                );
+                var button = $("<button>");
+                var span = $("<span>");
+                span.html("Hi, I'm a button!");
+                span.css("color", "red");
+                button.append(span);
+                $("body").append(button);
+            }
+            $( function() {
+                doStuff();
+            });
+        </script>
+    </body>
+</html>
